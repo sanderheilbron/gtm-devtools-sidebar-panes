@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Options for GTM DevTools Sidebar Panes extension</title>
+    <link rel="stylesheet" href="css/options.css" />
+    <script src="options.js"></script>
+    
+</head>
+<body>
+  <h1>Options for GTM DevTools Sidebar Panes extension</h1>
+  <hr>
+  <h3>Show panes</h3>
+  <div class="properties">
+    <p>
+        <label>Macros pane:</label>
+        <select id="macros_pane_values">
+          <option value="enable">Enable</option>
+          <option value="disable">Disable</option>
+        </select>
+      </p>
+      <small>Displays a sidebar pane in Developer Tools with an overview of all available macros inside the google_tag_manager object.
+</small>
+
+      <p>
+      <label>DataLayer pane:</label>
+      <select id="datalayer_pane_values">
+        <option value="enable">Enable</option>
+        <option value="disable">Disable</option>
+      </select>
+    </p>
+    <small>Displays a sidebar pane in Developer Tools which contains the content of the Google Tag Manager dataLayer (when available inside the DOM).</small>
+  </div>
+  <p class="actions">
+    <button class="save">Save</button>
+    <button class="restore">Restore default</button>
+  </p>
+  <span id="status"><span>
+</body>
+</html>
