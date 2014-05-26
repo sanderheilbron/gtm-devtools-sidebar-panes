@@ -7,14 +7,17 @@ Google Chrome extension which](images/tile-728-280.png)
 ## Usage
 This extension will add sidebar panes to the elements panel of Chrome Developer Tools.
 
+### GTM Macros pane
 You can use this extension to debug or check the macros inside the Google Tag Manager object of the current page. The GTM Macros pane shows all available macros including the latest event tracking data when available:
 
 ![GTM Macros pane](images/gtm-macros-pane.png)
 
+### GTM Datalayer pane
 The GTM Datalayer pane gives easy access to the objects inside the dataLayer (when available inside the DOM):
 
 ![GTM Datalayer pane](images/gtm-datalayer-pane.png)
 
+### GTM Event Listeners pane
 The GTM Event Listeners pane gives easy access to registered GTM click events inside the debugDL object. To use this pane you have to install and use the [GTM Auto-Event Listener Debugger Chrome extension][5] by Simo Ahava.
 
 ![GTM Event Listeners pane](images/gtm-event-listeners-pane.png)
