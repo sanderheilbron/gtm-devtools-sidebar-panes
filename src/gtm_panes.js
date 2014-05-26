@@ -1,4 +1,3 @@
-
 var getGoogleTagManagerMacros = function() {
 
   // Check if google_tag_manager object exists
@@ -55,23 +54,32 @@ var getGoogleTagManagerDataLayer = function() {
   }
 };
 
+var getGoogleTagManagerEventListeners = function() {
+
+  // Check if debugDL object exists
+  if (typeof debugDL !== 'undefined') {
+    return debugDL;
+  }
+};
+
 // Pane settings
 var macrosPaneSetting = localStorage.macrosPaneSetting || 'enable';
 var dataLayerPaneSetting = localStorage.dataLayerPaneSetting || 'enable';
+var eventListenersPaneSetting = localStorage.eventListenersPaneSetting || 'enable';
 
 if (macrosPaneSetting === "enable") {
 
   // Create the 'GTM Macros' Sidebar Pane in DevTools
   chrome.devtools.panels.elements.createSidebarPane("GTM Macros",
-      function(sidebar) {
-        function updateMacros() {
-            sidebar.setExpression("(" + getGoogleTagManagerMacros.toString() + ")()");
-        }
+    function(sidebar) {
+      function updateMacros() {
+        sidebar.setExpression("(" + getGoogleTagManagerMacros.toString() + ")()");
+      }
 
-        updateMacros();
-        
-        chrome.devtools.panels.elements.onSelectionChanged.addListener(
-        updateMacros);
+      updateMacros();
+
+      chrome.devtools.panels.elements.onSelectionChanged.addListener(updateMacros);
+      sidebar.onShown.addListener(updateMacros);
   });
 
 }
@@ -80,15 +88,32 @@ if (dataLayerPaneSetting === "enable") {
 
   // Create the 'GTM DataLayer' Sidebar Pane in DevTools
   chrome.devtools.panels.elements.createSidebarPane("GTM DataLayer",
-      function(sidebar) {
-        function updateDataLayer() {
-            sidebar.setExpression("(" + getGoogleTagManagerDataLayer.toString() + ")()");
-        }
+    function(sidebar) {
+      function updateDataLayer() {
+        sidebar.setExpression("(" + getGoogleTagManagerDataLayer.toString() + ")()");
+      }
 
-        updateDataLayer();
+      updateDataLayer();
 
-        chrome.devtools.panels.elements.onSelectionChanged.addListener(
-        updateDataLayer);
+      chrome.devtools.panels.elements.onSelectionChanged.addListener(updateDataLayer);
+      sidebar.onShown.addListener(updateDataLayer);
+  });
+
+}
+
+if (eventListenersPaneSetting === "enable") {
+
+  // Create the 'GTM Event Listeners' Sidebar Pane in DevTools
+  chrome.devtools.panels.elements.createSidebarPane("GTM Event Listeners",
+    function(sidebar) {
+      function updateDebugDL() {
+          sidebar.setExpression("(" + getGoogleTagManagerEventListeners.toString() + ")()");
+      }
+
+      updateDebugDL();
+
+      chrome.devtools.panels.elements.onSelectionChanged.addListener(updateDebugDL);
+      sidebar.onShown.addListener(updateDebugDL);
   });
 
 }

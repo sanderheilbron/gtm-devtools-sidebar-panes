@@ -2,8 +2,10 @@
 function loadOptions() {
   var macrosPaneSetting = localStorage.macrosPaneSetting;
   var dataLayerPaneSetting = localStorage.dataLayerPaneSetting;
+  var eventListenersPaneSetting = localStorage.eventListenersPaneSetting;
   var select_macros_pane_values = document.getElementById("macros_pane_values");
   var select_datalayer_pane_values = document.getElementById("datalayer_pane_values");
+  var select_event_listeners_pane_values = document.getElementById("event_listeners_pane_values");
   var i = 0;
 
 
@@ -23,14 +25,24 @@ function loadOptions() {
     }
   }
 
+  for (; i < select_event_listeners_pane_values.children.length; i++) {
+    var child_event_listeners_pane_values = select_event_listeners_pane_values.children[i];
+      if (child_event_listeners_pane_values.value === eventListenersPaneSetting) {
+        child_event_listeners_pane_values.selected = "true";
+        break;
+    }
+  }
+
 }
 
 // Save settings
 function saveOptions() {
   var select_macros_pane_values = document.getElementById("macros_pane_values");
   var select_datalayer_pane_values = document.getElementById("datalayer_pane_values");
+  var select_event_listeners_pane_values = document.getElementById("event_listeners_pane_values");
   localStorage.macrosPaneSetting = select_macros_pane_values.children[select_macros_pane_values.selectedIndex].value;
   localStorage.dataLayerPaneSetting = select_datalayer_pane_values.children[select_datalayer_pane_values.selectedIndex].value;
+  localStorage.eventListenersPaneSetting = select_event_listeners_pane_values.children[select_event_listeners_pane_values.selectedIndex].value;
 
   // Update status to let user know options were saved.
   var status = document.getElementById("status");
@@ -44,6 +56,7 @@ function saveOptions() {
 function restoreOptions() {
   localStorage.macrosPaneSetting = "disable";
   localStorage.dataLayerPaneSetting = "disable";
+  localStorage.eventListenersPaneSetting = "disable";
   location.reload();
 }
 

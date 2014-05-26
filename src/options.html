@@ -12,16 +12,15 @@
   <h3>Show panes</h3>
   <div class="properties">
     <p>
-        <label>Macros pane:</label>
-        <select id="macros_pane_values">
-          <option value="enable">Enable</option>
-          <option value="disable">Disable</option>
-        </select>
-      </p>
-      <small>Displays a sidebar pane in Developer Tools with an overview of all available macros inside the google_tag_manager object.
+      <label>Macros pane:</label>
+      <select id="macros_pane_values">
+        <option value="enable">Enable</option>
+        <option value="disable">Disable</option>
+      </select>
+    </p>
+    <small>Displays a sidebar pane in Developer Tools with an overview of all available macros inside the google_tag_manager object.
 </small>
-
-      <p>
+    <p>
       <label>DataLayer pane:</label>
       <select id="datalayer_pane_values">
         <option value="enable">Enable</option>
@@ -29,6 +28,14 @@
       </select>
     </p>
     <small>Displays a sidebar pane in Developer Tools which contains the content of the Google Tag Manager dataLayer (when available inside the DOM).</small>
+    <p>
+      <label>Event Listeners pane:</label>
+      <select id="event_listeners_pane_values">
+        <option value="enable">Enable</option>
+        <option value="disable">Disable</option>
+      </select>
+    </p>
+    <small>Displays a sidebar pane in Developer Tools which contains registered GTM click events. To use this pane you have to install and use the <a href="http://www.simoahava.com/analytics/debugging-auto-event-tracking-gtm/" target="_blank">GTM Auto-Event Listener Debugger</a> Chrome extension by Simo Ahava.</small>
   </div>
   <p class="actions">
     <button class="save">Save</button>
