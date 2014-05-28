@@ -1,10 +1,9 @@
 {
   "name": "GTM DevTools Sidebar Panes",
-  "version": "0.2",
+  "version": "0.2.1",
   "description": "Displays Google Tag Manager sidebar panes in Chrome Developer Tools.",
   "devtools_page": "gtm_panes.html",
   "manifest_version": 2,
-  "homepage_url": "http://www.sanderheilbron.nl",
   "options_page": "options.html",
   "icons": {
     "48": "icons/icon-48.png",
