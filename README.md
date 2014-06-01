@@ -18,7 +18,7 @@ The GTM Datalayer pane gives easy access to the objects inside the dataLayer (wh
 ![GTM Datalayer pane](images/gtm-datalayer-pane.png)
 
 ### GTM Event Listeners pane
-The GTM Event Listeners pane gives easy access to registered GTM auto-events (Click Listener, Link Click Listener, Form Submit Listener) inside the debugDL object. To use this pane you have to install and use the [GTM Auto-Event Listener Debugger Chrome extension][5] by Simo Ahava.
+The GTM Event Listeners pane gives easy access to registered GTM auto-events (Click Listener, Link Click Listener, Form Submit Listener) inside the debugDL object. To use this pane you have to install and use the [GTM Sonar Chrome extension][5] by Simo Ahava.
 
 ![GTM Event Listeners pane](images/gtm-event-listeners-pane.png)
 
@@ -68,4 +68,4 @@ THE SOFTWARE.
 [2]: https://github.com/sanderheilbron/gtm-devtools-sidebar-panes/issues
 [3]: https://github.com/sanderheilbron/gtm-devtools-sidebar-panes/pulls
 [4]: http://www.sanderheilbron.nl
-[5]: https://chrome.google.com/webstore/detail/gtm-auto-event-listener-d/iiihoahkpncaheicjfemhjkkfamcahcd
+[5]: https://chrome.google.com/webstore/detail/gtm-sonar/iiihoahkpncaheicjfemhjkkfamcahcd
